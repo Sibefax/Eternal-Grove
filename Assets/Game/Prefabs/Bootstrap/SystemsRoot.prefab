@@ -49,5 +49,6 @@ MonoBehaviour:
   timeManager: {fileID: 7626478859686775810, guid: dde780c2ad9fe9f4c92683e43e47fbdd, type: 3}
   eventBus: {fileID: 8606507259695293399, guid: e014947cc3b521e439b1699420332943, type: 3}
   saveSystem: {fileID: 2251644830378791993, guid: da06e337d32c6cb4993a3f6e54b75621, type: 3}
+  sceneLoader: {fileID: 7596871550243633471, guid: a09e0f55cf6c5f64a9bc1d885ea5533c, type: 3}
   buildingManager: {fileID: 5112316022078451662, guid: 6102176e86f74af49ad64355d53e7cfa, type: 3}
   uiManager: {fileID: 2932764934259114481, guid: 4ea236847c22e2a4da433f454fb66d04, type: 3}

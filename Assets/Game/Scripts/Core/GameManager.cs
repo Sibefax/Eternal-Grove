@@ -8,6 +8,7 @@ public class G : MonoBehaviour
     public TimeManager TimeManager { get; private set; }
     public EventBus EventBus { get; private set; }
     public SaveSystem SaveSystem { get; private set; }
+    public SceneLoader SceneLoader { get; private set; }
     public BuildingManager BuildingManager { get; private set; }
     public UIManager UIManager { get; private set; }
 
@@ -31,6 +32,7 @@ public class G : MonoBehaviour
         TimeManager = GetComponentInChildren<TimeManager>() ?? gameObject.AddComponent<TimeManager>();
         EventBus = GetComponentInChildren<EventBus>() ?? gameObject.AddComponent<EventBus>();
         SaveSystem = GetComponentInChildren<SaveSystem>() ?? gameObject.AddComponent<SaveSystem>();
+        SceneLoader = GetComponentInChildren<SceneLoader>() ?? gameObject.AddComponent<SceneLoader>();
         BuildingManager = GetComponentInChildren<BuildingManager>() ?? gameObject.AddComponent<BuildingManager>();
         UIManager = GetComponentInChildren<UIManager>() ?? gameObject.AddComponent<UIManager>();
     }

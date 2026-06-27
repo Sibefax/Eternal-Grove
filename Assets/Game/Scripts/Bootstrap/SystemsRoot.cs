@@ -7,6 +7,7 @@ public class SystemsRoot : MonoBehaviour
     public GameObject timeManager;
     public GameObject eventBus;
     public GameObject saveSystem;
+    public GameObject sceneLoader;
     public GameObject buildingManager;
     public GameObject uiManager;
 
@@ -17,6 +18,7 @@ public class SystemsRoot : MonoBehaviour
         Instantiate(timeManager);
         Instantiate(eventBus);
         Instantiate(saveSystem);
+        Instantiate(sceneLoader);
         Instantiate(buildingManager);
         Instantiate(uiManager);
     }

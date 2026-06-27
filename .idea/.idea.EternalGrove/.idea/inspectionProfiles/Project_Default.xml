@@ -1,0 +1,36 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="easyocr" />
+          <option value="filelock" />
+          <option value="fsspec" />
+          <option value="ImageIO" />
+          <option value="Jinja2" />
+          <option value="keyboard" />
+          <option value="lazy-loader" />
+          <option value="MarkupSafe" />
+          <option value="mpmath" />
+          <option value="networkx" />
+          <option value="ninja" />
+          <option value="opencv-python" />
+          <option value="opencv-python-headless" />
+          <option value="pyclipper" />
+          <option value="python-bidi" />
+          <option value="PyYAML" />
+          <option value="scikit-image" />
+          <option value="scipy" />
+          <option value="setuptools" />
+          <option value="shapely" />
+          <option value="sympy" />
+          <option value="tifffile" />
+          <option value="torch" />
+          <option value="torchvision" />
+          <option value="typing_extensions" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

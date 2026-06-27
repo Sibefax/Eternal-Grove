@@ -23,6 +23,6 @@ public class Bootstrap : MonoBehaviour
             go.AddComponent<G>();
         }
         
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("MainMenu");
     }
 }

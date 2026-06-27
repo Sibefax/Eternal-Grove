@@ -18,13 +18,13 @@ MonoBehaviour:
   m_PlatformId: 4e3c793746204150860bf175a9a41a05
   m_PlatformBuildProfile:
     rid: 1455137169305501714
-  m_OverrideGlobalSceneList: 1
+  m_OverrideGlobalSceneList: 0
   m_Scenes:
   - m_enabled: 1
     m_path: Assets/Game/Scenes/Bootstrap.unity
     m_guid: 8c9cfa26abfee488c85f1582747f6a02
   - m_enabled: 1
-    m_path: Assets/Game/Scenes/TestingSecondScene.unity
+    m_path: Assets/Game/Scenes/MainMenu.unity
     m_guid: 499071561bbb2cc4c958d13bbb92ee10
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
@@ -48,7 +48,7 @@ MonoBehaviour:
         m_CompressionType: 0
         m_InstallInBuildFolder: 0
         m_InsightsSettingsContainer:
-          m_BuildProfileEngineDiagnosticsState: 2
+          m_BuildProfileEngineDiagnosticsState: 0
         m_AdaptivePerformanceEnabled: 0
         m_WindowsBuildAndRunDeployTarget: 0
         m_Architecture: 0
