@@ -110,6 +110,7 @@ public class SaveSystem : MonoBehaviour
     {
         Data.gameData = new GameData();
         SaveGame();
+        LoadGame();
     }
     
     private SaveData CreateDefaultSave()
