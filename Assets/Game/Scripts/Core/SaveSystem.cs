@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 [Serializable]
-public class SettingsData
+public class SettingsData   // Default Settings Data
 {
     public float masterVolume = 1f;
     public float musicVolume = 1f;
@@ -18,13 +18,20 @@ public class SettingsData
 }
 
 [Serializable]
-public class SaveData
+public class GameData
 {
-    public SettingsData settings = new SettingsData();
+    // Space for all game save data
 }
 
 [Serializable]
-public class SaveContainer
+public class SaveData   // All save data
+{
+    public SettingsData settings = new SettingsData();
+    public GameData gameData = new GameData();
+}
+
+[Serializable]
+public class SaveContainer  // Save data and hash container
 {
     public SaveData data = new SaveData();
     public string hash;
@@ -34,7 +41,7 @@ public class SaveSystem : MonoBehaviour
 {
     private const string Salt = "Q7v#P2mL!9xH@c4Rk8Yw$T5nB1zF6sAa";
     
-    public void Awake()
+    private void Awake()
     {
         LoadGame();
     }
@@ -65,20 +72,10 @@ public class SaveSystem : MonoBehaviour
         {
             if (!File.Exists(SavePath))
             {
-                if (!File.Exists(SavePath))
-                {
-                    Data = new SaveData
-                    {
-                        settings = new SettingsData
-                        {
-                            resolutionWidth = Screen.currentResolution.width,
-                            resolutionHeight = Screen.currentResolution.height
-                        }
-                    };
+                Data = CreateDefaultSave();
 
                     SaveGame();
                     return;
-                }
             }
 
             string saveJson = File.ReadAllText(SavePath);
@@ -104,9 +101,29 @@ public class SaveSystem : MonoBehaviour
             if (File.Exists(SavePath))
                 File.Delete(SavePath);
 
-            Data = new SaveData();
+            Data = CreateDefaultSave();
             SaveGame();
         }
+    }
+
+    public void ResetGameSave()
+    {
+        Data.gameData = new GameData();
+        SaveGame();
+    }
+    
+    private SaveData CreateDefaultSave()
+    {
+        return new SaveData
+        {
+            gameData = new GameData(),
+
+            settings = new SettingsData
+            {
+                resolutionWidth = Screen.currentResolution.width,
+                resolutionHeight = Screen.currentResolution.height
+            }
+        };
     }
     
     private string CalculateHash(string json)
