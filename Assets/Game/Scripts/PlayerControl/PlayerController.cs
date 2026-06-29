@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 _movement;
     private Rigidbody2D _rb;
     private EternalGroveInputActions _inputActions;
+    private bool _isMoving;
+    private Vector2 _lastPosition;
     
     private static readonly int IsMovingRightHash = Animator.StringToHash("isMovingRight");
     private static readonly int IsMovingLeftHash = Animator.StringToHash("isMovingLeft");
@@ -33,6 +35,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        float distanceMoved = Vector2.Distance(_rb.position, _lastPosition);
+        // Checking if player moving to show animations correctly
+        _isMoving = distanceMoved > 0.01f;
+        _lastPosition = _rb.position;
         _rb.MovePosition(_rb.position + _movement * (speed * Time.fixedDeltaTime));
     }
 
@@ -51,7 +57,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(IsMovingUpHash, false);
         animator.SetBool(IsMovingDownHash, false);
 
-        if (_movement != Vector2.zero)
+        if (_movement != Vector2.zero && _isMoving)
         {
             if (Mathf.Abs(_movement.x) > Mathf.Abs(_movement.y))
             {
