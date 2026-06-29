@@ -169,3 +169,12 @@ Packages/packages-lock.json linguist-generated
 
 # Exceptions for .asset files such as lightning pre-baking
 LightingData.asset     binary
+
+# Removing shaders from statistics
+*.shader linguist-vendored
+*.hlsl linguist-vendored
+*.compute linguist-vendored
+*.cginc linguist-vendored
+*.raytrace linguist-vendored
+*.shadergraph linguist-vendored
+*.shadersubgraph linguist-vendored
