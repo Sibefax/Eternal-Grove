@@ -11,6 +11,7 @@ public class G : MonoBehaviour
     public SceneLoader SceneLoader { get; private set; }
     public BuildingManager BuildingManager { get; private set; }
     public UIManager UIManager { get; private set; }
+    public InputListener InputListener { get; private set; }
 
     private void Awake()
     {
@@ -35,5 +36,6 @@ public class G : MonoBehaviour
         SceneLoader = GetComponentInChildren<SceneLoader>() ?? gameObject.AddComponent<SceneLoader>();
         BuildingManager = GetComponentInChildren<BuildingManager>() ?? gameObject.AddComponent<BuildingManager>();
         UIManager = GetComponentInChildren<UIManager>() ?? gameObject.AddComponent<UIManager>();
+        InputListener = GetComponentInChildren<InputListener>() ?? gameObject.AddComponent<InputListener>();
     }
 }

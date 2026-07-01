@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 _movement;
     private Rigidbody2D _rb;
-    private EternalGroveInputActions _inputActions;
     private bool _isMoving;
     private Vector2 _lastPosition;
     
@@ -19,18 +18,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        
-        _inputActions = new EternalGroveInputActions();
-    }
-
-    private void OnEnable()
-    {
-        _inputActions.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _inputActions.Disable();
     }
 
     private void FixedUpdate()
@@ -44,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        _movement = _inputActions.Player.Move.ReadValue<Vector2>();
+        _movement = G.Instance.InputListener.playerMovement;
         UpdateAnimationParameters();
     }
 

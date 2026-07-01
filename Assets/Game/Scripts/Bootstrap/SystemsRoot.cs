@@ -10,6 +10,7 @@ public class SystemsRoot : MonoBehaviour
     public GameObject sceneLoader;
     public GameObject buildingManager;
     public GameObject uiManager;
+    public GameObject inputListener;
 
     private void Awake()
     {
@@ -21,5 +22,6 @@ public class SystemsRoot : MonoBehaviour
         Instantiate(sceneLoader);
         Instantiate(buildingManager);
         Instantiate(uiManager);
+        Instantiate(inputListener);
     }
 }
